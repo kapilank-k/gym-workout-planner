@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Workout Planner</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header class="top-nav">
+        <h1>Fitness Programmer</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li class="has-submenu">
+                    <a href="#" class="toggle">Calculators</a>
+                    <ul class="submenu">
+                        <li><a href="#">Body Mass Index (BMI)</a></li>
+                        <li><a href="#">Body Fat Index</a></li>
+                        <li><a href="#">Calories Burned</a></li>
+                        <li><a href="#">Daily Calorie Calculator</a></li>
+                        <li><a href="#">One Rep Max Calculator</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#" class="toggle">Exercises List</a>
+                    <ul class="submenu">
+                        <li><a href="#">Neck</a></li>
+                        <li><a href="#">Trapezius</a></li>
+                        <li><a href="#">Shoulder</a></li>
+                        <li><a href="#">Chest</a></li>
+                        <li><a href="#">Back / Wing</a></li>
+                        <li><a href="#">Erector Spinae</a></li>
+                        <li><a href="#">Biceps</a></li>
+                        <li><a href="#">Triceps</a></li>
+                        <li><a href="#">Forearm</a></li>
+                        <li><a href="#">Abs / Core</a></li>
+                        <li><a href="#">Leg</a></li>
+                        <li><a href="#">Calf</a></li>
+                        <li><a href="#">Hips</a></li>
+                        <li><a href="#">Cardio</a></li>
+                        <li><a href="#">Full Body</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Single Workouts</a></li>
+                <li><a href="#">Workout Plans</a></li>
+                <li><a href="#">Login / Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="bmi-calculator">
+            <h2>BMI Calculator</h2>
+            <p>Knowing BMI can help adults maintain good health. Enter your weight and height to calculate.</p>
+            <form>
+                <input type="number" placeholder="Your weight (kg)" id="weight">
+                <input type="number" placeholder="Your height (cm)" id="height">
+                <button type="button" onclick="calculateBMI()">Calculate</button>
+            </form>
+            <div class="bmi-result">
+                <h3>Your Body Mass Index is:</h3>
+                <p id="bmi-output">?</p>
+            </div>
+        </section>
+        
+        <section class="bmi-info">
+            <h2>Understanding Your Body Mass Index</h2>
+            <p><strong>If your BMI is below 18.5:</strong> Underweight - Consult a healthcare provider.</p>
+            <p><strong>If your BMI is between 18.5 - 24.9:</strong> Normal - Healthy weight.</p>
+            <p><strong>If your BMI is between 25 - 29.9:</strong> Overweight - Consider lifestyle changes.</p>
+            <p><strong>If your BMI is above 30:</strong> Obese - Higher risk of health problems.</p>
+        </section>
+    </main>
+    
+    <script>
+        function calculateBMI() {
+            let weight = document.getElementById("weight").value;
+            let height = document.getElementById("height").value / 100;
+            let bmi = (weight / (height * height)).toFixed(1);
+            document.getElementById("bmi-output").innerText = bmi;
+        }
+    </script>
+</body>
+</html>
